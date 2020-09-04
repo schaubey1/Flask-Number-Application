@@ -9,7 +9,7 @@ How to run the containerized version:
 1) Start Docker app
 
 2) Build docker image from the project source dir:
-docker image build -t number-smart-app 
+docker image build -t number-smart-app .
 
 
 2) To view list of docker images: 
