@@ -7,7 +7,7 @@ def index():
 
 	return 'Welcome! Use URL: http://127.0.0.1:5000/! Enter the url/int to see your number. '
 
-@app.route('/<int:number>',methods=['GET'])
+@app.route('/<int:number>',methods=['GET'])		#display integer method
 def displayIntegers(number):
 	if number>0:
 		output=list()
@@ -20,7 +20,7 @@ def displayIntegers(number):
 		return 'Please try again with a higher number.'
 
 @app.route('/<int:number>/odd',methods=['GET'])
-def displayOdd(number):
+def displayOdd(number):					#display odds method
 	print(number)
 	output=list()
 	if number>1:
@@ -32,8 +32,9 @@ def displayOdd(number):
 		return jsonify(output)
 	else:
 		return "You entered: 1. Please try a higher number."
+
 @app.route('/<int:number>/even',methods=['GET'])
-def displayEven(number):
+def displayEven(number):				#display even numbers method.
 	if number>1:
 		output=list()				#init list
 		i=0					#init counter, start at 0 since 0 is even.
@@ -42,6 +43,7 @@ def displayEven(number):
 				output.append(i)
 			i+=1
 	return jsonify(output)
+
 @app.route('/<int:number>/prime',methods=['GET'])
 def displayPrime(number):
 	output=list()					#init list
