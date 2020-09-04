@@ -1,6 +1,6 @@
 from flask import Flask
 from flask import jsonify
-import math
+import time
 app = Flask(__name__)
 
 boundsErr = "The number you entered is out of bounds."
@@ -38,18 +38,31 @@ def displayEven(number):
 
 @app.route('/<int:number>/prime', methods=['GET'])
 def displayPrime(number):
+    # Create a boolean array "prime[0..n]" and
+    # # initialize all entries it as true. A value
+    # # in prime[i] will finally be false if i is
+    # # Not a prime, else true.
+    intVal = int(number)
+    prime = [True for i in range(intVal + 1)]
+    primeIndex = 2
+    t0 = time.time()
+    while (primeIndex * primeIndex <= intVal):
+        # If prime[primeIndex] is not changed, then it is
+        # a prime
+        if (prime[primeIndex]):
+            # Update all multiples of prime index.
+            for i in range(primeIndex * primeIndex, intVal + 1, primeIndex):
+                prime[i] = False
+        primeIndex += 1
+    # add all prime numbers to the list to be printed
     primeList = []
-    for i in range(2, number + 1):
-        primeList.append(i)
-    i = 2
-    while (i <= int(math.sqrt(number))):
-        if i in primeList:
-            for j in range(i * 2, number + 1, i):
-                if j in primeList:
-                    primeList.remove(j)
-        i += 1
+    for index in range(2, intVal):
+        if prime[index]:
+            primeList.append(str(index))
+    t1 = time.time()
+    print("Execution time:", t1-t0)
     return jsonify(primeList)
 
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=56, debug=False)
+    app.run(host='0.0.0.0', port=8004, debug=False)
