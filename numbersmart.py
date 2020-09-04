@@ -4,7 +4,6 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-
 	return 'Welcome! Use URL: http://127.0.0.1:5000/! Enter the url/int to see your number. '
 
 @app.route('/<int:number>',methods=['GET'])		#display integer method
