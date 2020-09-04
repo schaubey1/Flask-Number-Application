@@ -12,7 +12,7 @@ def displayIntegers(number):
 	if number>0:
 		output=list()
 		i=1
-		while i<number+1:
+		while i<number+1: 			#loop through and append numbers for printing.
 			output.append(i)
 			i+=1
 		return jsonify(output)
@@ -24,9 +24,9 @@ def displayOdd(number):
 	print(number)
 	output=list()
 	if number>1:
-		i=0
+		i=0					#loop through and append numbers for printing.
 		while i<number+1:
-			if i% 2 != 0:
+			if i% 2 != 0:			#only add odd numbers to our list.
 				output.append(i)
 			i+=1
 		return jsonify(output)
@@ -35,8 +35,8 @@ def displayOdd(number):
 @app.route('/<int:number>/even',methods=['GET'])
 def displayEven(number):
 	if number>1:
-		output=list()
-		i=0
+		output=list()				#init list
+		i=0					#init counter, start at 0 since 0 is even.
 		while i<number+1:
 			if i% 2 == 0:
 				output.append(i)
@@ -44,15 +44,15 @@ def displayEven(number):
 	return jsonify(output)
 @app.route('/<int:number>/prime',methods=['GET'])
 def displayPrime(number):
-	output=list()
-	i=2
+	output=list()					#init list
+	i=2						#2 is the first prime number, set our counter to this.
 	if number>1:
-		for x in range(i,number+1):
-			prime=True
-			for i in range(2,x):
-				if x%i==0:
+		for x in range(i,number+1):		#loop through entire arange, set prime flag as true by default.
+			prime=True			
+			for i in range(2,x):		#Determine which numbers are not prime.
+				if x%i==0:		#if cursor is divisble by number with no remainder, it is not prime.
 					prime=False
-			if prime==True:
+			if prime==True:			#append and print
 				output.append(x)
 	else: 
 		return 'Number too small.'
