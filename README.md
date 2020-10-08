@@ -1,8 +1,8 @@
 # Flask-Number-Application
 Basic containerized flask application to print odd, even, and prime numbers up to N.
 Dependencies:
-      Flask
-      Python
+    Flask
+    Python
 How to run the application locally:
 - python numbersmart.py 
 
