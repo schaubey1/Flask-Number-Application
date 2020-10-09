@@ -1,8 +1,17 @@
 # Flask-Number-Application
-Basic containerized flask application to print odd, even, and prime numbers up to N.
+Basic containerized flask application to calculate odd, even, and prime numbers up to N.
+
+Utilized Seive of Eratosthenes:  
+   - https://primes.utm.edu/glossary/page.php?sort=SieveOfEratosthenes
+   - https://www.ams.org/journals/bull/2013-50-02/S0273-0979-2012-01390-3/S0273-0979-2012-01390-3.pdf
+
+
+
 Dependencies:
-    Flask
-    Python
+        Flask  (Any version)
+        Python (3.x or higher)
+        Docker (Most recent)
+        
 How to run the application locally:
 - python numbersmart.py 
 
