@@ -1,5 +1,6 @@
 # Flask-Number-Application
 Basic containerized flask application to calculate odd, even, and prime numbers up to N.
+Primes up to N may be calculated up to 25,000,000 currently.
 
 Utilized Seive of Eratosthenes:  
    - https://primes.utm.edu/glossary/page.php?sort=SieveOfEratosthenes
