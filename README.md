@@ -8,8 +8,8 @@ Utilized Seive of Eratosthenes:
 
 
 Dependencies:
-        Flask  (Any version)
-        Python (3.x or higher)
+        Flask  (Any version)  
+        Python (3.x or higher)  
         Docker (Most recent)
         
 How to run the application locally:
