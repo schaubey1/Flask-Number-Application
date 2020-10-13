@@ -6,7 +6,13 @@ Utilized Seive of Eratosthenes:
    - https://primes.utm.edu/glossary/page.php?sort=SieveOfEratosthenes
    - https://www.ams.org/journals/bull/2013-50-02/S0273-0979-2012-01390-3/S0273-0979-2012-01390-3.pdf
 
+Arguements:
 
+http:[FLASK IP ADDRESS]/[PORT]/arguement/option
+Arguement:
+   - Arguements should be numbers 0<N<25,000,000.
+Options:
+-even,odd,prime
 
 Dependencies:
    - Flask  (Any version)  
